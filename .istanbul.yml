@@ -1,0 +1,27 @@
+verbose: true
+instrumentation:
+    root: .
+    extensions:
+        - .js
+    excludes: ['test/**']
+    variable: __coverage__
+    include-all-sources: true
+    compact: true
+    baseline-file: ./coverage/coverage-baseline.raw.json
+reporting:
+    print: both
+    reports:
+        - lcov
+    dir: ./coverage
+    watermarks:
+        statements: [80, 100]
+        functions: [80, 100]
+        branches: [80, 100]
+        lines: [80, 100]
+check:
+    global:
+        statements: 80
+        lines: 80
+        branches: 80
+        functions: 80
+        excludes: []

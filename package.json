@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node lib/index;",
-    "lint": "node_modules/.bin/eslint lib/**/*.js",
-    "fix-eslint": "node_modules/.bin/eslint lib/** test/** --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run unit-test && npm run lint",
+    "unit-test": "node_modules/.bin/istanbul cover node_modules/tape/bin/tape test/**/*.js | tap-junit --output coverage/junit",
+    "test-no-cov": "node_modules/.bin/tape test/**/*.test.js && npm run lint",
+    "test-coverage": "node node_modules/.bin/istanbul cover node_modules/tape/bin/tape test/**/*.js",
+    "lint": "node_modules/.bin/eslint lib/**/*.js test/**/*.js",
+    "fix-eslint": "node_modules/.bin/eslint lib/** test/** --fix"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +24,9 @@
     "pg-promise": "^8.5.5"
   },
   "devDependencies": {
-    "eslint": "^5.14.0"
+    "eslint": "^5.14.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "sinon": "^7.2.4",
+    "tape": "^4.10.1"
   }
 }
