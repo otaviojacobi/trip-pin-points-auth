@@ -33,11 +33,12 @@ adminRouter.get('/deployTable', async (req, res) => {
   const client = db.getClient();
   try {
     const createResult = await client.query(`
-    CREATE TABLE users 
+    CREATE EXTENSION pgcrypto;
+    CREATE TABLE IF NOT EXISTS users 
       (
         id SERIAL PRIMARY KEY,
-        username TEXT NOT NULL,
-        email TEXT NOT NULL,
+        username TEXT NOT NULL UNIQUE,
+        email TEXT NOT NULL UNIQUE,
         scopes TEXT NOT NULL,
         password TEXT NOT NULL
       );
