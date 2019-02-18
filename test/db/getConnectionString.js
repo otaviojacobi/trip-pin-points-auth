@@ -28,4 +28,3 @@ test('Should throw if environment variables not there', t => {
   }
   t.end();
 });
-

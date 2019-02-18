@@ -3,7 +3,7 @@ instrumentation:
     root: .
     extensions:
         - .js
-    excludes: ['test/**']
+    excludes: ['test/**, lib/routers/**', lib/index.js]
     variable: __coverage__
     include-all-sources: true
     compact: true
