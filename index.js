@@ -4,30 +4,28 @@ require('dotenv').config()
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 const express = require('express');
-const pg = require('pg-promise')();
 const httpStatus = require('http-status-codes');
 const app = express();
+const db = require('./db');
 
-const getConnectionString = require('./getConnectionString');
 const admin = require('./adminRouter');
 
 const signOptions = {
- issuer:  'Trip Ping Points Inc',
- subject:  'secretemail@secret.com',
- audience:  'idk',
+ //issuer:  'Trip Ping Points Inc',
+ //subject:  'secretemail@secret.com',
+ //audience:  'idk',
  expiresIn:  "12h",
  algorithm:  "RS256"
 };
 
 const privateKey = fs.readFileSync('./private.key', 'utf8');
 
-const pgClient = pg(getConnectionString());
-
 app.use('/admin', admin);
 
 app.get('/healthcheck', async (req, res) => {
   try {
-    const result = await pgClient.query(`SELECT 'ok'`);
+    const client = db.getClient();
+    const result = await client.query(`SELECT 'ok'`);
     res.status(httpStatus.OK).send(result);
   } catch(err) {
     console.log('Error querying databse', err);
@@ -36,13 +34,13 @@ app.get('/healthcheck', async (req, res) => {
 });
 
 app.get('/register', (req, res) => {
-  console.log('User successfully signed up');w
+  console.log('User successfully signed up');
 });
 
 app.get('/token', (req, res) => {
 
   const payload = {
-    escopes: ["user"]
+    scopes: ["admin"]
   };
 
   const token = jwt.sign(payload, privateKey, signOptions);
