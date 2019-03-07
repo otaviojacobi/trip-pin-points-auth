@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.com/otaviojacobi/trip-pin-points-auth.png)](https://travis-ci.com/otaviojacobi/trip-pin-points-auth)
 
+## AVAILABLE AT: http://trip-pin-points.sa-east-1.elasticbeanstalk.com
+
+## API Documentation: https://app.swaggerhub.com/apis-docs/otaviojacobi/trip-pin-points-auth/1.0.1
+
+
 ## Setting up your local environment
 
  - In the project root run `npm install` to install all dependencies
