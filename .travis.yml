@@ -5,10 +5,10 @@ deploy:
   provider: elasticbeanstalk
   access_key_id: $ACCESSKEYID
   secret_access_key: $SECRETACCESSKEY 
-  region: us-east-1
-  app: trip-pin-points-auth
-  env: TripPinPointsAuth
-  bucket_name: elasticbeanstalk-sa-east-1-877463950700
+  region: "us-east-1"
+  app: "trip-pin-points-auth"
+  env: "TripPinPointsAuth"
+  bucket_name: "elasticbeanstalk-sa-east-1-877463950700"
 env:
   global:
   - secure: ySDDmumxfArGb32+ISgkMdCVgvRH04QxeOT0OafYZoY8ie7rxjFSbD2MPGx/JGPVAyChAYcpASdM9CVleB2+oPYz+JEszN1alJW4dJXsiG63w5V37+352V4gEGSxW+lDE06bLEPo1/dT7lkY7m2QSouRDQC/b9TPXyfjBSBY4s8g2pyTavXoxYT/+Zt8CA6nLgzCsgS5ijm4SDdYeYfcCJSnas5NQx2tpoyyaKrDXfHIT4folT3BGlTU7tgb91eSNTry958ZFOvg33+L7p23SSZV48OAUJ7rmUrqR827WoAGPw14BqCvbRql3MNwiRog5sY0vDWpgKCpRU3oa92G+DlmjWucZDKTwCF2AYuFXv0t5/Hz92p3dZu+xeQEbq6xvfwOaB9jYMumeXmLf74k3kqvCQSAZ8XCBcormh1kWibQ7Q1I2MxCu2ABgRbzTkQpba07AEezvz9vxjygnZPpdB0d/3gW7n4suVSf1qy9I48WCIPqsKet2FCkaQnwRexYXR0GzapvQ7fRARCPA39L9thfmapNxxFRq1/0LVpR/yb5T2WrnWfUSaFkPghDfcjXrybG5hizS16a9DavreKTrTDWKtxHqeEUXEhS+wyPuvcZrsWwpYuXD/0JozRvNnxNldl1yDcw8UBvOX30ecwSQ7zLoN+ZYAVfm8A3CoL7u1E=
