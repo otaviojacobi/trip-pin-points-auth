@@ -61,7 +61,7 @@ test('Should register user', t => {
 
   db.setClient({
     query: async () => {
-      return [{scopes: 'test,admin', zid: mockUserRegisterInfo.username}];
+      return [{scopes: 'test', zid: mockUserRegisterInfo.username}];
     }
   });
 

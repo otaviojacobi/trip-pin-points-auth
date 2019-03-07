@@ -7,11 +7,11 @@ const db = require('../../lib/db');
 test('Should try to create client if client is null', t => {
   db.setClient(null);
   sinon.stub(process, 'env').value({
-    DB_USERNAME: 'username',
-    DB_PASSWORD: 'pwd',
-    DB_HOST: 'host',
-    DB_PORT: '4242',
-    DB_NAME: 'name'
+    RDS_USERNAME: 'username',
+    RDS_PASSWORD: 'pwd',
+    RDS_HOSTNAME: 'host',
+    RDS_PORT: '4242',
+    RDS_DB_NAME: 'name'
   });
   const client = db.getClient();
 

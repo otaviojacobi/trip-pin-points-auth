@@ -7,11 +7,11 @@ const getConnectionString = require('../../lib/db/getConnectionString');
 
 test('Should get correct connection string', t => {
   sinon.stub(process, 'env').value({
-    DB_USERNAME: 'username',
-    DB_PASSWORD: 'pwd',
-    DB_HOST: 'host',
-    DB_PORT: '4242',
-    DB_NAME: 'name'
+    RDS_USERNAME: 'username',
+    RDS_PASSWORD: 'pwd',
+    RDS_HOSTNAME: 'host',
+    RDS_PORT: '4242',
+    RDS_DB_NAME: 'name'
   });
 
   t.equals(getConnectionString(), 'postgres://username:pwd@host:4242/name');
