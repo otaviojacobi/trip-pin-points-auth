@@ -6,6 +6,7 @@ deploy:
   access_key_id: $ACCESSKEYID
   secret_access_key: $SECRETACCESSKEY 
   region: "us-east-1"
+  edge: true
   app: "trip-pin-points-auth"
   env: "TripPinPointsAuth"
   bucket_name: "elasticbeanstalk-sa-east-1-877463950700"
