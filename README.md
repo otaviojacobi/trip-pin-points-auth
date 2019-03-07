@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/otaviojacobi/trip-pin-points-auth.png)](https://travis-ci.com/otaviojacobi/trip-pin-points-auth)
+
 ## Setting up your local environment
 
  - In the project root run `npm install` to install all dependencies
