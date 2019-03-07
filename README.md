@@ -1,8 +1,6 @@
 ## Setting up your local environment
 
-In the project root run:
-
- - `npm install` to install all dependencies
+ - In the project root run `npm install` to install all dependencies
  - [Start the postgresql database](https://www.postgresql.org/docs/9.1/server-start.html)
  - In the repository root set a `.env` file with the following vairables pointing to your postgresql db
     ```
@@ -12,7 +10,7 @@ In the project root run:
     DB_PORT=5432
     DB_NAME=postges_db_name_here
     ```
- - Create `public.key` and `private.key` files in the `lib/keys` files. You can do that as described [here](https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9).
+ - Create `public.key` and `private.key` files in the `lib/keys` folder. You can do that as described [here](https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9).
 
 ## Available Scripts
 
