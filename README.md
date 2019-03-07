@@ -2,13 +2,13 @@
 
  - In the project root run `npm install` to install all dependencies
  - [Start the postgresql database](https://www.postgresql.org/docs/9.1/server-start.html)
- - In the repository root set a `.env` file with the following vairables pointing to your postgresql db
+ - Set a the following environment variables pointing to your postgresql db
     ```
-    DB_USERNAME=postgres_username_here
-    DB_PASSWORD=postgres_password_here
-    DB_HOST=localhost
-    DB_PORT=5432
-    DB_NAME=postges_db_name_here
+    RDS_USERNAME=postgres_username_here
+    RDS_PASSWORD=postgres_password_here
+    RDS_HOSTNAME=localhost
+    RDS_PORT=5432
+    RDS_DB_NAME=postges_db_name_here
     ```
  - Create `public.key` and `private.key` files in the `lib/keys` folder. You can do that as described [here](https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9).
 
