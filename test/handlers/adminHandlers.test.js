@@ -68,50 +68,6 @@ test('Should get all users', t => {
   adminHandlers.handleGetUsers(null, res);
 });
 
-test('Should redeploy db tables', t => {
-  db.setClient({
-    query: async () => {
-      return 'OK';
-    }
-  });
-
-  const res = {
-    status: function(stat) {
-      t.equals(stat, httpStatus.OK);
-      return this;
-    },
-    send: function(result) {
-      t.deepEquals(result, 'OK');
-      t.end();
-    }
-  };
-
-  adminHandlers.handleDeployTable(null, res);
-});
-
-test('Should return error if failed to connect to database', t => {
-
-  const testError = new Error('Expected test error');
-  db.setClient({
-    query: async () => {
-      throw testError;
-    }
-  });
-
-  const res = {
-    status: function(stat) {
-      t.equals(stat, httpStatus.SERVICE_UNAVAILABLE);
-      return this;
-    },
-    send: function(result) {
-      t.deepEquals(result, { status: httpStatus.SERVICE_UNAVAILABLE, message: testError.toString() });
-      t.end();
-    }
-  };
-
-  adminHandlers.handleDeployTable(null, res);
-});
-
 test('Should register admin', t => {
 
   const mockUserRegisterInfo = {
